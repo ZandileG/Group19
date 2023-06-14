@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CardType : MonoBehaviour
 {
-    
     public enum FloodCards
     {
         BreakersBridge,
@@ -32,16 +30,6 @@ public class CardType : MonoBehaviour
         TwilightHollow,
         WatchTower,
         WhisperingGarden
-        
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }
