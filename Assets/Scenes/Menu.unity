@@ -1610,6 +1610,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 646571693}
     m_Modifications:
+    - target: {fileID: 5242008770209540953, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5242008770667736020, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1706,9 +1710,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 715867544}
+    - target: {fileID: 5242008771795117666, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
+      propertyPath: m_text
+      value: Back To Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 5242008772052805164, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1944942961}
+    - target: {fileID: 5242008772052805166, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
+      propertyPath: m_Name
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079088773504596891, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 035e61ad8a0cbd44e9499efc774561cd, type: 3}
