@@ -4,30 +4,40 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] TreasureCards;
+    [Header("Players in game: ")]
     public GameObject[] Players;
+
+    [Header("Adventure Cards List: ")]
+    public GameObject[] AdventureCards;
+  
+    [Header("Treasure Cards List: ")]
+    public GameObject[] TreasureCards;
+
+    [Header("Flood Cards List: ")]
+    public GameObject[] FloodCards;
+
     private void ShuffleTreasureCards()
     {
-        int cardCount = TreasureCards.Length;
+        int cardCount = AdventureCards.Length;
         if (cardCount >= 6)
         {
             for (int i = 0; i < cardCount; i++)
             {
                 int randomIndex = Random.Range(i, cardCount);
-                GameObject tempCard = TreasureCards[randomIndex];
-                TreasureCards[randomIndex] = TreasureCards[i];
-                TreasureCards[i] = tempCard;
+                GameObject tempCard = AdventureCards[randomIndex];
+                AdventureCards[randomIndex] = AdventureCards[i];
+                AdventureCards[i] = tempCard;
             }
 
             for (int i = cardCount - 1; i >= cardCount - 2; i--)
             {
-                Destroy(TreasureCards[i]);
-                TreasureCards[i] = null;
+                Destroy(AdventureCards[i]);
+                AdventureCards[i] = null;
             }
             
             for (int i = 0; i < 4; i++)
             {
-                TreasureCards[i].SetActive(true);
+                AdventureCards[i].SetActive(true);
             }
 
             int playerCount = Players.Length;
@@ -40,7 +50,7 @@ public class GameManager : MonoBehaviour
                     Transform cardDisplay = player.transform.GetChild(0);
 
                     
-                    GameObject card = Instantiate(TreasureCards[i], cardDisplay.position, Quaternion.identity);
+                    GameObject card = Instantiate(AdventureCards[i], cardDisplay.position, Quaternion.identity);
                     card.transform.SetParent(cardDisplay, false);
                 }
             }

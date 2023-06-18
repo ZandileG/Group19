@@ -4778,7 +4778,6 @@ GameObject:
   - component: {fileID: 875264126}
   - component: {fileID: 875264125}
   - component: {fileID: 875264127}
-  - component: {fileID: 875264128}
   m_Layer: 0
   m_Name: ExplorerPawn
   m_TagString: Untagged
@@ -4846,7 +4845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875264124}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.71, y: -16.79, z: 0}
+  m_LocalPosition: {x: 74.72, y: -16.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4865,32 +4864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7991b69298483e48a3af0be78da02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &875264128
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875264124}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!1 &918229865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,7 +7383,6 @@ GameObject:
   - component: {fileID: 1398734346}
   - component: {fileID: 1398734347}
   - component: {fileID: 1398734348}
-  - component: {fileID: 1398734349}
   m_Layer: 0
   m_Name: PilotPawn
   m_TagString: Untagged
@@ -7426,7 +7398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398734345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.1, y: 1.6, z: 0.09124286}
+  m_LocalPosition: {x: 55.18, y: 2.08, z: 0.09124286}
   m_LocalScale: {x: 0.99898624, y: 0.99898624, z: 0.99898624}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7497,32 +7469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7991b69298483e48a3af0be78da02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1398734349
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398734345}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!1 &1417345276
 GameObject:
   m_ObjectHideFlags: 0
@@ -7534,7 +7480,6 @@ GameObject:
   - component: {fileID: 1417345278}
   - component: {fileID: 1417345277}
   - component: {fileID: 1417345279}
-  - component: {fileID: 1417345280}
   m_Layer: 0
   m_Name: EngineerPawn
   m_TagString: Untagged
@@ -7602,7 +7547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417345276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.36, y: -16.9, z: 0}
+  m_LocalPosition: {x: 45.52, y: -16.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7621,32 +7566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7991b69298483e48a3af0be78da02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1417345280
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417345276}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!1 &1421798381
 GameObject:
   m_ObjectHideFlags: 0
@@ -7910,7 +7829,6 @@ GameObject:
   - component: {fileID: 1552268378}
   - component: {fileID: 1552268379}
   - component: {fileID: 1552268380}
-  - component: {fileID: 1552268381}
   m_Layer: 0
   m_Name: NavigatorPawn
   m_TagString: Untagged
@@ -7926,7 +7844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552268377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.1, y: 10.5, z: 0}
+  m_LocalPosition: {x: 45.19, y: 11.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7997,32 +7915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7991b69298483e48a3af0be78da02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1552268381
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552268377}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!1 &1562010604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8202,7 +8094,6 @@ GameObject:
   - component: {fileID: 1597646748}
   - component: {fileID: 1597646749}
   - component: {fileID: 1597646751}
-  - component: {fileID: 1597646750}
   m_Layer: 0
   m_Name: DiverPawn
   m_TagString: Untagged
@@ -8218,7 +8109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597646747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.66, y: -7.57, z: 0.07668956}
+  m_LocalPosition: {x: 45.26, y: -7.25, z: 0.07668956}
   m_LocalScale: {x: 0.99914795, y: 0.99914795, z: 0.99914795}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8277,32 +8168,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1597646750
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597646747}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!114 &1597646751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9586,18 +9451,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae5decc5458578478c822dedb451dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreasureCards:
-  - {fileID: 816129495}
-  - {fileID: 1903656118}
-  - {fileID: 1070132414}
-  - {fileID: 1785267086}
-  - {fileID: 2104990859}
-  - {fileID: 1073860103}
   Players:
   - {fileID: 1252729394}
   - {fileID: 1280086453}
   - {fileID: 875256782}
   - {fileID: 413308786}
+  AdventureCards:
+  - {fileID: 816129495}
+  - {fileID: 1903656118}
+  - {fileID: 1785267086}
+  - {fileID: 2104990859}
+  - {fileID: 1073860103}
+  - {fileID: 1070132414}
+  TreasureCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  FloodCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1877520754
 Transform:
   m_ObjectHideFlags: 0
@@ -10122,7 +10041,6 @@ GameObject:
   - component: {fileID: 2040517623}
   - component: {fileID: 2040517624}
   - component: {fileID: 2040517626}
-  - component: {fileID: 2040517625}
   m_Layer: 0
   m_Name: MessengerPawn
   m_TagString: Untagged
@@ -10138,7 +10056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040517622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 75.07, y: -7.91, z: 0.07668956}
+  m_LocalPosition: {x: 75.3, y: -7.91, z: 0.07668956}
   m_LocalScale: {x: 0.99914795, y: 0.99914795, z: 0.99914795}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10197,32 +10115,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2040517625
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040517622}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.25, y: 6.25}
-    newSize: {x: 3.25, y: 6.25}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.25, y: 6.25}
-  m_EdgeRadius: 0
 --- !u!114 &2040517626
 MonoBehaviour:
   m_ObjectHideFlags: 0
