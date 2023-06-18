@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class FloodCard : MonoBehaviour
 {
-   public Sprite sprite;
-   
+     private SpriteRenderer spriteRenderer; // SpriteRenderer component
 
+    void Awake()
+    {       Debug.Log("FloodCard: Awake");
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void SetCardSprite(Sprite sprite)
+    {
+        // Set the sprite of the SpriteRenderer component
+        spriteRenderer.sprite = sprite;
+         Debug.Log("FloodCard: SetCardSprite");
+    }
 }
