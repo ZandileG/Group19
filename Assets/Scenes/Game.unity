@@ -8764,6 +8764,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 284dd6aa131cc844c95307455e4ae392, type: 3}
   - {fileID: 21300000, guid: ff3ffc7afff5abd4388a956438a6145b, type: 3}
   deckTransform: {fileID: 1858791334}
+  islandTiles: []
+  discardPileTransform: {fileID: 684248200}
 --- !u!4 &1338764877
 Transform:
   m_ObjectHideFlags: 0
