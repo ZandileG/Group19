@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloodCard : MonoBehaviour
 {
      private SpriteRenderer spriteRenderer; // SpriteRenderer component
+    public bool isDeactivated = false;
 
     void Awake()
     {       Debug.Log("FloodCard: Awake");

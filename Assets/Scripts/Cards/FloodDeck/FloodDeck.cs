@@ -14,8 +14,7 @@ public class FloodDeck : MonoBehaviour
     private List<GameObject> floodDiscardPileCards; // List of card game objects in the flood discard pile
 
 
-
-   void Start()
+  void Start()
 {
     Debug.Log("FloodDeck: Start");
     ShuffleFloodDeck();
@@ -43,7 +42,7 @@ public class FloodDeck : MonoBehaviour
         }
     }
 
-    public void DrawTopCards(int count, Transform container)
+  public void DrawTopCards(int count, Transform container)
 {
     Debug.Log("FloodDeck: DrawTopCards");
     for (int i = 0; i < count; i++)
@@ -59,15 +58,6 @@ public class FloodDeck : MonoBehaviour
         {
             int cardIndex = floodDrawPile[0];
             floodDrawPile.RemoveAt(0);
-
-            // Check if the card being drawn is already in the floodDiscardPile
-            if (floodDiscardPile.Contains(cardIndex))
-            {
-                // Deactivate the corresponding flooded card
-                GameObject islandTile = islandTiles[cardIndex];
-                Transform floodedIslandTile = islandTile.transform.parent.parent.Find("FloodedTiles").GetChild(cardIndex);
-                StartCoroutine(FlipIslandTileCoroutine(islandTile, floodedIslandTile));
-            }
 
             // Instantiate a new instance of the card prefab
             GameObject cardInstance = Instantiate(floodCardPrefab, container);
@@ -89,10 +79,16 @@ public class FloodDeck : MonoBehaviour
             // Flip the corresponding Island tile to its "flooded" side
             FlipIslandTile(cardIndex);
 
-            // Place the drawn Flood card in the discard pile
-            PlaceCardInDiscardPile(cardInstance, cardIndex);
+            // Wait for 1 second before placing the drawn Flood card in the discard pile
+            StartCoroutine(PlaceCardInDiscardPileWithDelay(cardInstance, cardIndex, 1f));
         }
     }
+}
+
+private IEnumerator PlaceCardInDiscardPileWithDelay(GameObject card, int cardIndex, float delay)
+{
+    yield return new WaitForSeconds(delay);
+    PlaceCardInDiscardPile(card, cardIndex);
 }
 
 void ShuffleDiscardPileIntoDrawPile()
@@ -124,22 +120,37 @@ void ShuffleDiscardPileIntoDrawPile()
 
 
 
-   public void FlipIslandTile(int cardIndex)
+  private HashSet<int> drawnCards = new HashSet<int>();
+
+public void FlipIslandTile(int cardIndex)
+{
+    // Find the Island tile that corresponds to the given card index
+    GameObject islandTile = islandTiles[cardIndex];
+
+    // Find the FloodedIslandTile child of the Island tile
+    Transform floodedIslandTile = islandTile.transform.parent.parent.Find("FloodedTiles").GetChild(cardIndex);
+
+    if (floodedIslandTile.gameObject.activeSelf && drawnCards.Contains(cardIndex))
     {
-        Debug.Log("FloodDeck: FlipIslandTile");
-        // Find the Island tile that corresponds to the given card index
-        GameObject islandTile = islandTiles[cardIndex];
+        // Deactivate the floodedIslandTile
+        floodedIslandTile.gameObject.SetActive(false);
 
-        // Find the FloodedIslandTile child of the Island tile
-        Transform floodedIslandTile = islandTile.transform.parent.parent.Find("FloodedTiles").GetChild(cardIndex);
+        // Reset the rotation of the Island tile
+        islandTile.transform.rotation = Quaternion.identity;
 
-        // Log a message to see if floodedIslandTile was found correctly
-        Debug.Log("FloodDeck: FlipIslandTile: floodedIslandTile = " + floodedIslandTile);
-
+        // Deactivate the Island tile
+        islandTile.SetActive(false);
+    }
+    else
+    {
         // Start a coroutine to animate the flipping of the Island tile
-        Debug.Log("FloodDeck: DrawTopCards: islandTile = " + islandTile + ", floodedIslandTile = " + floodedIslandTile);
         StartCoroutine(FlipIslandTileCoroutine(islandTile, floodedIslandTile));
     }
+
+    drawnCards.Add(cardIndex);
+}
+
+
 
 private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
 {
@@ -170,9 +181,7 @@ private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform flo
     islandTile.transform.rotation = Quaternion.identity;
 }
 
-
-
-   public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
+public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
 {
     Debug.Log("FloodDeck: PlaceCardInDiscardPile: cardIndex = " + cardIndex);
 
