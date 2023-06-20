@@ -7222,6 +7222,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 284dd6aa131cc844c95307455e4ae392, type: 3}
   - {fileID: 21300000, guid: ff3ffc7afff5abd4388a956438a6145b, type: 3}
   deckTransform: {fileID: 1858791334}
+  islandTiles:
+  - {fileID: 1718048374}
+  - {fileID: 1579828601}
+  - {fileID: 1392249469}
+  - {fileID: 1942739499}
+  - {fileID: 93531360}
+  - {fileID: 2092492747}
+  - {fileID: 1421798381}
+  - {fileID: 215632033}
+  - {fileID: 1688340908}
+  - {fileID: 1248514245}
+  - {fileID: 594078399}
+  - {fileID: 833619850}
+  - {fileID: 1764437369}
+  - {fileID: 1052173790}
+  - {fileID: 227461553}
+  - {fileID: 1330790912}
+  - {fileID: 1988824205}
+  - {fileID: 106967726}
+  - {fileID: 476106860}
+  - {fileID: 1038573436}
+  - {fileID: 391160184}
+  - {fileID: 247947000}
+  - {fileID: 652923905}
+  - {fileID: 780241292}
+  discardPileTransform: {fileID: 684248200}
 --- !u!4 &1338764877
 Transform:
   m_ObjectHideFlags: 0
