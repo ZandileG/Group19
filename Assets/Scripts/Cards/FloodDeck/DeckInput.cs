@@ -6,13 +6,34 @@ public class DeckInput : MonoBehaviour
 {
     public FloodDeck floodDeck; // Reference to the FloodDeck script
     public Transform container; // Transform of the container GameObject
+    public GameObject FloodDisplay;
 
-    void OnMouseDown()
+    private void Start()
     {
-        // Draw the top 6 cards from the flood deck when the deck is clicked
+        FloodDisplay.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            DisplayDrawnCards();
+            StartCoroutine(DisplayPanelForSeconds(12f));
+        }
+    }
+
+    private void DisplayDrawnCards()
+    {
         floodDeck.DrawTopCards(6, container);
     }
-    
-        
+
+    private IEnumerator DisplayPanelForSeconds(float seconds)
+    {
+        FloodDisplay.SetActive(true);
+
+        yield return new WaitForSeconds(seconds);
+
+        FloodDisplay.SetActive(false);
     }
+}
 

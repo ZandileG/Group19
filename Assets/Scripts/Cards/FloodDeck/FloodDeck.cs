@@ -22,8 +22,6 @@ public class FloodDeck : MonoBehaviour
     floodDiscardPileCards = new List<GameObject>();
 }
 
-
-
     void ShuffleFloodDeck()
     {
         Debug.Log("FloodDeck: ShuffleFloodDeck");
