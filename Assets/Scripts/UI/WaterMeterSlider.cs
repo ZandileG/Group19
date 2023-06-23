@@ -12,6 +12,11 @@ public class WaterMeterSlider : MonoBehaviour
     public Canvas winOrLoseCanvas;
     public GameObject loseText;
 
+    public int WaterLevelCount
+    {
+        get { return (int)_slider.value; }
+    }
+
     void Start()
     {
         _slider.onValueChanged.AddListener((v) =>
@@ -24,6 +29,7 @@ public class WaterMeterSlider : MonoBehaviour
                 winOrLoseCanvas.gameObject.SetActive(true);
                 loseText.gameObject.SetActive(true);
             }
+           
         });
     }
 }

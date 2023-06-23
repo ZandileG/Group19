@@ -6005,6 +6005,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6666553780175199751, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
   m_PrefabInstance: {fileID: 872338304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &872338306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6666553780175199748, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
+  m_PrefabInstance: {fileID: 872338304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e869f958476f6545b1fc4df3ffe4f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874113375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7190,6 +7201,7 @@ MonoBehaviour:
   - {fileID: 652923905}
   - {fileID: 780241292}
   discardPileTransform: {fileID: 684248200}
+  waterMeterSlider: {fileID: 0}
 --- !u!1 &1070132414
 GameObject:
   m_ObjectHideFlags: 0
@@ -9432,6 +9444,7 @@ MonoBehaviour:
   - {fileID: 652923905}
   - {fileID: 780241292}
   discardPileTransform: {fileID: 684248200}
+  waterMeterSlider: {fileID: 872338306}
 --- !u!4 &1338764877
 Transform:
   m_ObjectHideFlags: 0

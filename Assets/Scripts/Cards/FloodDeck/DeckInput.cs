@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeckInput : MonoBehaviour
@@ -13,13 +11,10 @@ public class DeckInput : MonoBehaviour
         FloodDisplay.SetActive(false);
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DisplayDrawnCards();
-            StartCoroutine(DisplayPanelForSeconds(12f));
-        }
+        DisplayDrawnCards();
+        StartCoroutine(DisplayPanelForSeconds(12f));
     }
 
     private void DisplayDrawnCards()
@@ -27,7 +22,7 @@ public class DeckInput : MonoBehaviour
         floodDeck.DrawTopCards(6, container);
     }
 
-    private IEnumerator DisplayPanelForSeconds(float seconds)
+    private System.Collections.IEnumerator DisplayPanelForSeconds(float seconds)
     {
         FloodDisplay.SetActive(true);
 
@@ -36,4 +31,6 @@ public class DeckInput : MonoBehaviour
         FloodDisplay.SetActive(false);
     }
 }
+
+
 

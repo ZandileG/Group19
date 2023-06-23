@@ -9,6 +9,7 @@ public class Pawn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
   //The item's image is visible in the Inspector
     [SerializeField] private Image image;
     [HideInInspector] public Transform parentAfterDrag;
+    public int PawnIndex;
 
   //These are also visible in the Inspector
     public PawnMovement tile;

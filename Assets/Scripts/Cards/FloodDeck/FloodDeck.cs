@@ -12,9 +12,10 @@ public class FloodDeck : MonoBehaviour
     private List<int> floodDiscardPile; // Flood discard pile
     public Transform discardPileTransform; // Transform of the discard pile GameObject
     private List<GameObject> floodDiscardPileCards; // List of card game objects in the flood discard pile
+    public WaterMeterSlider waterMeterSlider;
 
 
-  void Start()
+    void Start()
 {
     Debug.Log("FloodDeck: Start");
     ShuffleFloodDeck();
@@ -42,8 +43,10 @@ public class FloodDeck : MonoBehaviour
 
   public void DrawTopCards(int count, Transform container)
 {
-    Debug.Log("FloodDeck: DrawTopCards");
-    for (int i = 0; i < count; i++)
+         Debug.Log("FloodDeck: DrawTopCards");
+
+        int cardCount = waterMeterSlider.WaterLevelCount;
+        for (int i = 0; i < count; i++)
     {
         // Check if the floodDrawPile is empty
         if (floodDrawPile.Count == 0)
