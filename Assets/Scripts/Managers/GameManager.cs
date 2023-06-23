@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         int cardCount = AdventureCards.Length;
         if (cardCount >= 6)
+
         {
             for (int i = 0; i < cardCount; i++)
             {

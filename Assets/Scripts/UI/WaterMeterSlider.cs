@@ -11,25 +11,27 @@ public class WaterMeterSlider : MonoBehaviour
     public Canvas gameCanvas;
     public Canvas winOrLoseCanvas;
     public GameObject loseText;
+    public FloodDeck floodDeck;
 
     public int WaterLevelCount
     {
         get { return (int)_slider.value; }
     }
 
-    void Start()
+void Start()
+{
+    _slider.onValueChanged.AddListener((v) =>
     {
-        _slider.onValueChanged.AddListener((v) =>
-        {
-            _sliderText.text = v.ToString("0");
-
+        _sliderText.text = v.ToString("0");
             if (v >= 10)
             {
                 gameCanvas.gameObject.SetActive(false);
                 winOrLoseCanvas.gameObject.SetActive(true);
                 loseText.gameObject.SetActive(true);
             }
-           
-        });
-    }
+        // Update the flood deck with the new water level count
+        floodDeck.UpdateWaterLevelCount((int)v);
+    });
+}
+
 }

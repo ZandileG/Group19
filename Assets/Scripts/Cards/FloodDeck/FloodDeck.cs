@@ -12,7 +12,8 @@ public class FloodDeck : MonoBehaviour
     private List<int> floodDiscardPile; // Flood discard pile
     public Transform discardPileTransform; // Transform of the discard pile GameObject
     private List<GameObject> floodDiscardPileCards; // List of card game objects in the flood discard pile
-    public WaterMeterSlider waterMeterSlider;
+    private int waterLevelCount;
+
 
 
     void Start()
@@ -44,8 +45,7 @@ public class FloodDeck : MonoBehaviour
   public void DrawTopCards(int count, Transform container)
 {
          Debug.Log("FloodDeck: DrawTopCards");
-
-        int cardCount = waterMeterSlider.WaterLevelCount;
+        int cardsToDraw = waterLevelCount;
         for (int i = 0; i < count; i++)
     {
         // Check if the floodDrawPile is empty
@@ -125,8 +125,13 @@ void ShuffleDiscardPileIntoDrawPile()
 
 public void FlipIslandTile(int cardIndex)
 {
-    // Find the Island tile that corresponds to the given card index
-    GameObject islandTile = islandTiles[cardIndex];
+        if (drawnCards.Contains(cardIndex))
+            return;
+
+        if (drawnCards.Count >= waterLevelCount)
+            return;
+        // Find the Island tile that corresponds to the given card index
+        GameObject islandTile = islandTiles[cardIndex];
 
     // Find the FloodedIslandTile child of the Island tile
     Transform floodedIslandTile = islandTile.transform.parent.parent.Find("FloodedTiles").GetChild(cardIndex);
@@ -193,6 +198,8 @@ public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
     floodDiscardPile.Add(cardIndex);
     floodDiscardPileCards.Add(card);
 }
-
-
+    public void UpdateWaterLevelCount(int count)
+    {
+        waterLevelCount = count;
+    }
 }

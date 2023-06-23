@@ -6,6 +6,7 @@ using TMPro;
 public class TurnManager : MonoBehaviour
 {
     public GameObject[] players; // array of player prefabs
+    public GameObject[] PlayerPanels; // array of player prefabs
     public float turnDuration = 5f; // duration of each turn in seconds
     private int currentPlayer = 0; // variable to keep track of current player's turn
 
@@ -33,10 +34,12 @@ public class TurnManager : MonoBehaviour
             if (i == currentPlayer)
             {
                 turnText.enabled = true; // show current player's text
+                PlayerPanels[i].SetActive(true);
             }
             else
             {
                 turnText.enabled = false; // hide other player's text
+                PlayerPanels[i].SetActive(false);
             }
         }
     }

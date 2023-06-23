@@ -202,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17573810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.7, y: -29.9, z: 0}
+  m_LocalPosition: {x: 3.3, y: -29.4, z: 0}
   m_LocalScale: {x: 0.55, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,6 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1 &175208564
 GameObject:
@@ -1027,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 181778313}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 1197586374}
 --- !u!1 &187217374
 GameObject:
@@ -1484,7 +1486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219049703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.7, y: -31.9, z: 0}
+  m_LocalPosition: {x: -39.1, y: -31.1, z: 0}
   m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3452,6 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 531570190}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 1132132316}
 --- !u!1 &562203715
 GameObject:
@@ -3552,6 +3555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1001 &580548577
 PrefabInstance:
@@ -3777,6 +3781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1 &589592262
 GameObject:
@@ -4239,6 +4244,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &655324263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+  m_PrefabInstance: {fileID: 1599813906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659324907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4332,7 +4342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 660387590}
-  - component: {fileID: 660387591}
   - component: {fileID: 660387589}
   - component: {fileID: 660387588}
   - component: {fileID: 660387587}
@@ -4430,24 +4439,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &660387591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660387586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0a4ffde3095fd49b72d3a61112eb15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players:
-  - {fileID: 1252729394}
-  - {fileID: 1280086453}
-  - {fileID: 875256782}
-  - {fileID: 413308786}
-  turnDuration: 5
 --- !u!1001 &672420262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4793,6 +4784,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 602163439}
     m_Modifications:
+    - target: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_Name
+      value: PlayerMenu4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.061495017
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.30578846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 57.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 243
+      objectReference: {fileID: 0}
     - target: {fileID: 1963613527001350195, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5238,6 +5249,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 602163439}
     m_Modifications:
+    - target: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_Name
+      value: PlayerMenu2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -306
+      objectReference: {fileID: 0}
     - target: {fileID: 1963613527001350195, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5895,6 +5918,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1104640511}
     - target: {fileID: 6666553780175199748, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
+      propertyPath: floodDeck
+      value: 
+      objectReference: {fileID: 1338764876}
+    - target: {fileID: 6666553780175199748, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
       propertyPath: gameCanvas
       value: 
       objectReference: {fileID: 660387589}
@@ -6005,17 +6032,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6666553780175199751, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
   m_PrefabInstance: {fileID: 872338304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &872338306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6666553780175199748, guid: 8c1250aa54e6db24eafbeec43cb0ccca, type: 3}
-  m_PrefabInstance: {fileID: 872338304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e869f958476f6545b1fc4df3ffe4f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &874113375
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,6 +6191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1 &918229865
 GameObject:
@@ -6277,6 +6294,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &926085725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+  m_PrefabInstance: {fileID: 815213934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952140474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,6 +6573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1 &997848968
 GameObject:
@@ -7201,7 +7224,6 @@ MonoBehaviour:
   - {fileID: 652923905}
   - {fileID: 780241292}
   discardPileTransform: {fileID: 684248200}
-  waterMeterSlider: {fileID: 0}
 --- !u!1 &1070132414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,6 +7530,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104640511}
   m_CullTransparentMesh: 1
+--- !u!1 &1105614261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+  m_PrefabInstance: {fileID: 1120147901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119471038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7599,6 +7626,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 602163439}
     m_Modifications:
+    - target: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_Name
+      value: PlayerMenu3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05543213
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.27265692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 55.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 220
+      objectReference: {fileID: 0}
     - target: {fileID: 1963613527001350195, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7937,8 +7984,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149319937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.4, y: -2.7, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.45, z: 1}
+  m_LocalPosition: {x: -39.39, y: -2.27, z: 0}
+  m_LocalScale: {x: 0.50500005, y: 0.3854659, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 111579256}
@@ -8019,6 +8066,11 @@ Transform:
   m_Father: {fileID: 1788433226}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1154017017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+  m_PrefabInstance: {fileID: 713742654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1164688441
 GameObject:
   m_ObjectHideFlags: 0
@@ -8111,6 +8163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1164688443}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 1867496832}
 --- !u!1 &1195575043
 GameObject:
@@ -8428,6 +8481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1197829371}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 1867496833}
 --- !u!1001 &1207785148
 PrefabInstance:
@@ -9444,7 +9498,6 @@ MonoBehaviour:
   - {fileID: 652923905}
   - {fileID: 780241292}
   discardPileTransform: {fileID: 684248200}
-  waterMeterSlider: {fileID: 872338306}
 --- !u!4 &1338764877
 Transform:
   m_ObjectHideFlags: 0
@@ -10055,6 +10108,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 602163439}
     m_Modifications:
+    - target: {fileID: 1626185386, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_Name
+      value: PlayerMenu1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.059214607
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.33818728
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 57.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626185387, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -333
+      objectReference: {fileID: 0}
     - target: {fileID: 1963613527001350195, guid: ad3570e00e5369c4599e3f149f361cad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10266,6 +10339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1601673564}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 367255341}
 --- !u!1 &1621856797
 GameObject:
@@ -10359,6 +10433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1621856799}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 1207785149}
 --- !u!1001 &1676662815
 PrefabInstance:
@@ -12478,6 +12553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877520754}
   - component: {fileID: 1877520753}
+  - component: {fileID: 1877520755}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12526,6 +12602,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877520755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877520752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0a4ffde3095fd49b72d3a61112eb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1252729394}
+  - {fileID: 1280086453}
+  - {fileID: 875256782}
+  - {fileID: 413308786}
+  PlayerPanels:
+  - {fileID: 655324263}
+  - {fileID: 926085725}
+  - {fileID: 1105614261}
+  - {fileID: 1154017017}
+  turnDuration: 5
 --- !u!1 &1903656118
 GameObject:
   m_ObjectHideFlags: 0
@@ -13248,6 +13347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   parentAfterDrag: {fileID: 0}
+  PawnIndex: 0
   tile: {fileID: 0}
 --- !u!1 &2092492747
 GameObject:

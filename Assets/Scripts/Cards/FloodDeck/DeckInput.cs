@@ -14,7 +14,7 @@ public class DeckInput : MonoBehaviour
     private void OnMouseDown()
     {
         DisplayDrawnCards();
-        StartCoroutine(DisplayPanelForSeconds(12f));
+       
     }
 
     private void DisplayDrawnCards()
