@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Pawn : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IEndDragHandler*/
+public class Pawn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-  /* //The item's image is visible in the Inspector
+  //The item's image is visible in the Inspector
     [SerializeField] private Image image;
     [HideInInspector] public Transform parentAfterDrag;
 
-    //These are also visible in the Inspector
-    public MoveItem tile;
+  //These are also visible in the Inspector
+    public PawnMovement tile;
 
-   //This controls what happens when an item is dragged
+  //This controls what happens when an item is dragged
     public void OnBeginDrag(PointerEventData eventData)
     {
             parentAfterDrag = transform.parent;
@@ -31,5 +31,5 @@ public class Pawn : MonoBehaviour/*, IBeginDragHandler, IDragHandler, IEndDragHa
     {
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
-    }*/
+    }
 }
