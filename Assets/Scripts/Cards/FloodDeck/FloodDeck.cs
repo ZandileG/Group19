@@ -92,7 +92,7 @@ private IEnumerator PlaceCardInDiscardPileWithDelay(GameObject card, int cardInd
     PlaceCardInDiscardPile(card, cardIndex);
 }
 
-void ShuffleDiscardPileIntoDrawPile()
+/*void ShuffleDiscardPileIntoDrawPile()
 {
     Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
 
@@ -118,13 +118,64 @@ void ShuffleDiscardPileIntoDrawPile()
         floodDrawPile[randomIndex] = temp;
     }
 }
+*/
+void ShuffleDiscardPileIntoDrawPile()
+{
+    Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
+
+    // Check if all island tiles are inactive
+    bool allIslandTilesInactive = true;
+    foreach (GameObject islandTile in islandTiles)
+    {
+        if (islandTile.activeSelf)
+        {
+            allIslandTilesInactive = false;
+            break;
+        }
+    }
+
+    // Only shuffle the discard pile back into the draw pile if not all island tiles are inactive
+    if (!allIslandTilesInactive)
+    {
+        // Move all cards from floodDiscardPile and floodDiscardPileCards back into their respective draw piles
+        while (floodDiscardPile.Count > 0)
+        {
+            int cardIndex = floodDiscardPile[0];
+            GameObject card = floodDiscardPileCards[0];
+            floodDiscardPile.RemoveAt(0);
+            floodDiscardPileCards.RemoveAt(0);
+            floodDrawPile.Add(cardIndex);
+
+            // Move the card game object back to the position of the deck
+            card.transform.position = deckTransform.position;
+        }
+
+        // Shuffle floodDrawPile
+        for (int i = 0; i < floodDrawPile.Count; i++)
+        {
+            int temp = floodDrawPile[i];
+            int randomIndex = Random.Range(i, floodDrawPile.Count);
+            floodDrawPile[i] = floodDrawPile[randomIndex];
+            floodDrawPile[randomIndex] = temp;
+        }
+    }
+}
+
 
 
 
   private HashSet<int> drawnCards = new HashSet<int>();
 
+
+
+private int flipIslandTileCounter = 0;
 public void FlipIslandTile(int cardIndex)
-{
+{Debug.Log("FloodDeck: FlipIslandTile");
+ flipIslandTileCounter++;
+    Debug.Log("FloodDeck: FlipIslandTile: flipIslandTileCounter = " + flipIslandTileCounter);
+
+
+
         if (drawnCards.Contains(cardIndex))
             return;
 
@@ -150,6 +201,7 @@ public void FlipIslandTile(int cardIndex)
     else
     {
         // Start a coroutine to animate the flipping of the Island tile
+        Debug.Log("FloodDeck: FlipIslandTile: StartCoroutine");
         StartCoroutine(FlipIslandTileCoroutine(islandTile, floodedIslandTile));
     }
 
