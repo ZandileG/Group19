@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Treasure Cards List: ")]
     public GameObject[] TreasureCards;
-    public GameObject[] TreasureDiscardPile;
+    public GameObject TreasureDiscardPile;
 
 
 
