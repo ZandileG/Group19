@@ -17,12 +17,12 @@ public class FloodDeck : MonoBehaviour
 
 
     void Start()
-{
+    {
     Debug.Log("FloodDeck: Start");
     ShuffleFloodDeck();
     floodDiscardPile = new List<int>();
     floodDiscardPileCards = new List<GameObject>();
-}
+    }
 
     void ShuffleFloodDeck()
     {
@@ -44,10 +44,10 @@ public class FloodDeck : MonoBehaviour
 
   public void DrawTopCards(int count, Transform container)
 {
-         Debug.Log("FloodDeck: DrawTopCards");
-        int cardsToDraw = waterLevelCount;
+         drawnCards.Clear();
+        Debug.Log("FloodDeck: DrawTopCards");
         for (int i = 0; i < count; i++)
-    {
+        {
         // Check if the floodDrawPile is empty
         if (floodDrawPile.Count == 0)
         {
@@ -83,7 +83,7 @@ public class FloodDeck : MonoBehaviour
             // Wait for 1 second before placing the drawn Flood card in the discard pile
             StartCoroutine(PlaceCardInDiscardPileWithDelay(cardInstance, cardIndex, 1f));
         }
-    }
+  }
 }
 
 private IEnumerator PlaceCardInDiscardPileWithDelay(GameObject card, int cardIndex, float delay)
@@ -118,7 +118,6 @@ void ShuffleDiscardPileIntoDrawPile()
         floodDrawPile[randomIndex] = temp;
     }
 }
-
 
 
   private HashSet<int> drawnCards = new HashSet<int>();
@@ -190,6 +189,7 @@ private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform flo
 public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
 {
     Debug.Log("FloodDeck: PlaceCardInDiscardPile: cardIndex = " + cardIndex);
+
 
     // Move the card game object to the position of the discard pile
     card.transform.position = discardPileTransform.position;

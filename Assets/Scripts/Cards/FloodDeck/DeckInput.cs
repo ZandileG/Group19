@@ -19,7 +19,7 @@ public class DeckInput : MonoBehaviour
 
     private void DisplayDrawnCards()
     {
-        floodDeck.DrawTopCards(6, container);
+        floodDeck.DrawTopCards(9, container);
     }
 
     private System.Collections.IEnumerator DisplayPanelForSeconds(float seconds)
