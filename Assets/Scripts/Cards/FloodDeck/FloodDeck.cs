@@ -92,7 +92,7 @@ private IEnumerator PlaceCardInDiscardPileWithDelay(GameObject card, int cardInd
     PlaceCardInDiscardPile(card, cardIndex);
 }
 
-/*void ShuffleDiscardPileIntoDrawPile()
+void ShuffleDiscardPileIntoDrawPile()
 {
     Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
 
@@ -118,7 +118,7 @@ private IEnumerator PlaceCardInDiscardPileWithDelay(GameObject card, int cardInd
         floodDrawPile[randomIndex] = temp;
     }
 }
-*/
+/*
 void ShuffleDiscardPileIntoDrawPile()
 {
     Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
@@ -160,14 +160,12 @@ void ShuffleDiscardPileIntoDrawPile()
         }
     }
 }
+*/
 
 
-
-  private HashSet<int> drawnCards = new HashSet<int>();
-
-
-
+private HashSet<int> drawnCards = new HashSet<int>();
 private int flipIslandTileCounter = 0;
+
 public void FlipIslandTile(int cardIndex)
 {Debug.Log("FloodDeck: FlipIslandTile");
  flipIslandTileCounter++;
@@ -209,7 +207,9 @@ public void FlipIslandTile(int cardIndex)
 
 
 
-private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
+
+
+/*private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
 {
     Debug.Log("FloodDeck: FlipIslandTileCoroutine");
 
@@ -237,6 +237,40 @@ private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform flo
     // Reset the rotation of the Island tile
     islandTile.transform.rotation = Quaternion.identity;
 }
+
+*/
+
+private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
+{
+    Debug.Log("FloodDeck: FlipIslandTileCoroutine");
+
+    // Check if the floodedIslandTile is already active
+    if (floodedIslandTile.gameObject.activeSelf)
+    {
+        // Deactivate the floodedIslandTile
+        floodedIslandTile.gameObject.SetActive(false);
+
+        // Reset the rotation of the Island tile
+        islandTile.transform.rotation = Quaternion.identity;
+    }
+    else if (islandTile.activeSelf)
+    {
+        // Animate the rotation of the Island tile over time
+        for (float t = 0; t < 1; t += Time.deltaTime)
+        {
+            islandTile.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(0, 180, t), 0);
+            yield return null;
+        }
+
+        // Enable the FloodedIslandTile and disable the IslandTile
+        floodedIslandTile.gameObject.SetActive(true);
+        islandTile.SetActive(false);
+
+        // Reset the rotation of the Island tile
+        islandTile.transform.rotation = Quaternion.identity;
+    }
+}
+
 
 public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
 {
