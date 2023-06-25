@@ -33,4 +33,5 @@ public class Pawn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
     }
+
 }

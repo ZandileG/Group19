@@ -41,13 +41,13 @@ public class GameManager : MonoBehaviour
                 AdventureCards[i] = null;
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 2; i++)
             {
                 AdventureCards[i].SetActive(true);
             }
 
             int playerCount = Players.Length;
-            for (int i = 0; i < Mathf.Min(playerCount, 4); i++)
+            for (int i = 0; i < Mathf.Min(playerCount, 2); i++)
             {
                 GameObject player = Players[i];
                 if (player != null)
