@@ -18,6 +18,22 @@ public class WaterMeterSlider : MonoBehaviour
         get { return (int)_slider.value; }
     }
 
+    public void Start()
+    {
+        _slider.onValueChanged.AddListener((V) =>
+        {
+            _sliderText.text = V.ToString("0");
+            if (V >= 10)
+            {
+                gameCanvas.gameObject.SetActive(false);
+                winOrLoseCanvas.gameObject.SetActive(true);
+                loseText.gameObject.SetActive(true);
+            }
+            // Update the flood deck with the new water level count
+            floodDeck.UpdateWaterLevelCount((int)_slider.value);
+        });
+
+    }
     public void MoveWaterLevelMarker()
     {
         _slider.value += 1;
