@@ -11,7 +11,6 @@ public class TreasureDeckInput : MonoBehaviour
     private void OnMouseDown()
     {
         TreasureDeck.ShuffleDeck();
-
         TreasureDeck.DrawCardsOnClick();
     }
 
