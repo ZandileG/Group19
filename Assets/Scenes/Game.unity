@@ -17303,7 +17303,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338764877}
-  - component: {fileID: 1338764878}
   - component: {fileID: 1338764876}
   m_Layer: 0
   m_Name: FloodDeckController
@@ -17394,20 +17393,6 @@ Transform:
   m_Father: {fileID: 952140475}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1338764878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338764875}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 663bef920bb46274292490fba03e8733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foolsLandingTile: {fileID: 718882216}
-  winOrLoseCanvas: {fileID: 391158135}
 --- !u!1 &1348095925
 GameObject:
   m_ObjectHideFlags: 0
@@ -23385,6 +23370,23 @@ MonoBehaviour:
   winText: {fileID: 254970001}
   islandTile: {fileID: 1688340908}
   halfTile: {fileID: 370594365}
+--- !u!114 &1867496843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735392038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be888d7c09019a4b9cd921b327bb600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCanvas: {fileID: 660387589}
+  winOrLoseCanvas: {fileID: 391158138}
+  loseText: {fileID: 1104640511}
+  islandTile: {fileID: 1688340908}
+  floodedTile: {fileID: 718882216}
 --- !u!1 &1877520752
 GameObject:
   m_ObjectHideFlags: 0
