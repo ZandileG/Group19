@@ -1214,7 +1214,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '1. This is a two player game. The players have a playing space on their
+    side of the board. This is where the Treasure Cards they draw will be placed
+    and atop that is where they can place the treasures that they collect.
+
+
+    2.
+    Each player is randomly assigned an Adventure Card at the top of their player
+    space. This card shows player what special actions they can make when it it their
+    turn to play.
+
+
+    3. Details for these special actions are found when pressing
+    the "?" button.
+
+
+    4. On their turns, the players can do up to 3 actions.
+    These are tracked through the press of the "Increase Counter" Button.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1241,14 +1257,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 16
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
