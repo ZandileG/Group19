@@ -29,8 +29,7 @@ public class WaterMeterSlider : MonoBehaviour
                 winOrLoseCanvas.gameObject.SetActive(true);
                 loseText.gameObject.SetActive(true);
             }
-            // Update the flood deck with the new water level count
-            floodDeck.UpdateWaterLevelCount((int)_slider.value);
+       
         });
 
     }

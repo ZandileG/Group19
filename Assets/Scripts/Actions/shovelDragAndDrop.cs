@@ -6,7 +6,7 @@ public class shovelDragAndDrop : MonoBehaviour
 {
    private bool isDragging = false;
     private Vector3 initialPosition;
-
+    public TurnManager turnManager;
     private void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
@@ -42,6 +42,7 @@ public class shovelDragAndDrop : MonoBehaviour
         Transform normalIslandTile = hit.collider.transform.parent.parent.Find("IslandTiles").GetChild(hit.collider.transform.GetSiblingIndex());
         normalIslandTile.gameObject.SetActive(true);
         hit.collider.gameObject.SetActive(false);
+        turnManager.IncreaseCounter();
     }
 }
 }

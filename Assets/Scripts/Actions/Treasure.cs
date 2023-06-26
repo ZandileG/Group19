@@ -14,6 +14,8 @@ public class Treasure : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     //These are also visible in the Inspector
     public TreasureMovement treasureSlot;
 
+    public TurnManager turnManager;
+
     //This controls what happens when an item is dragged
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -32,5 +34,6 @@ public class Treasure : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+        turnManager.IncreaseCounter();
     }
 }

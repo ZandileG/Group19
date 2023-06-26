@@ -14,6 +14,8 @@ public class Pawn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
   //These are also visible in the Inspector
     public PawnMovement tile;
 
+    public TurnManager turnManager;
+
   //This controls what happens when an item is dragged
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -32,6 +34,7 @@ public class Pawn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
+        turnManager.IncreaseCounter();
     }
 
 }

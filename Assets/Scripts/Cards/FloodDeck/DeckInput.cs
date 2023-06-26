@@ -12,7 +12,7 @@ public class DeckInput : MonoBehaviour
 
     private void DisplayDrawnCards()
     {
-        floodDeck.DrawTopCards(9, container);
+        floodDeck.DrawTopCards(6, container);
     }
 }
 
