@@ -104,6 +104,7 @@ public class TreasureDeckManager : MonoBehaviour
 
             // Instantiate the card from the player's deck list at the specified position
             GameObject instantiatedCard = Instantiate(playerDeck.decklist[i], position, Quaternion.identity);
+            instantiatedCard.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
 
             // Optionally, you can set the instantiated card as a child of another GameObject
             // instantiatedCard.transform.SetParent(someParentTransform);
