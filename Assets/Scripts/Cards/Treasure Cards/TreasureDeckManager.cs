@@ -14,7 +14,8 @@ public class TreasureDeckManager : MonoBehaviour
 
     public FloodDeck floodDeck;
     public GameObject[] initialCardArray; // Array of cards at the start of the game
-    public PlayerDeck playerDeck;
+    public PlayerDeck PlayerDeck1;
+    public PlayerDeck2 PlayerDeck2;
 
     public GameObject FullText;
 
@@ -26,12 +27,13 @@ public class TreasureDeckManager : MonoBehaviour
 
     public void DrawInitialCards()
     {
-        DrawTopCards(treasureCards, playerDeck);
+        DrawTopCards(treasureCards, PlayerDeck1);
     }
 
     public void DrawCardsOnClick()
     {
-        DrawTopCards(playerDeck.decklist.ToArray(), playerDeck);
+        DrawTopCards(PlayerDeck1.decklist.ToArray(), PlayerDeck1);
+
     }
 
     public void ShuffleDeck()
@@ -118,7 +120,7 @@ public class TreasureDeckManager : MonoBehaviour
 
     private void RemoveTopCards(int count)
     {
-        if (playerDeck.decklist.Count == 5)
+        if (PlayerDeck1.decklist.Count == 5)
         {
             StartCoroutine(ShowFullTextForDuration(2.5f));
             return;

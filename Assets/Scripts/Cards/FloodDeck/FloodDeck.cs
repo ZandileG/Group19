@@ -44,7 +44,7 @@ public class FloodDeck : MonoBehaviour
 
   public void DrawTopCards(int count, Transform container)
 {
-         drawnCards.Clear();
+        drawnCards.Clear();
         Debug.Log("FloodDeck: DrawTopCards");
         for (int i = 0; i < count; i++)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class TurnManager : MonoBehaviour
@@ -9,21 +10,37 @@ public class TurnManager : MonoBehaviour
     public GameObject[] PlayerPanels; // array of player prefabs
     public float turnDuration = 5f; // duration of each turn in seconds
     private int currentPlayer = 0; // variable to keep track of current player's turn
+    private int[] counters; // counters for the text
+    public Text[] counterTexts; // references to the counter text elements
 
     void Start()
     {
         UpdatePlayerVisibility();
-        StartCoroutine(ChangeTurns());
+        counters = new int[players.Length]; // initialize the counter variables
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            counters[i] = 0; // set initial counter value to 0
+            counterTexts[i].text = counters[i].ToString(); // set initial counter text value
+        }
     }
 
-    IEnumerator ChangeTurns()
+    public void NextTurn()
     {
-        while (true)
+        counters[currentPlayer]++; // Increment the counter for the current player
+
+        if (counters[currentPlayer] >= 3)
         {
-            yield return new WaitForSeconds(turnDuration); // wait for turn duration
-            currentPlayer = (currentPlayer + 1) % players.Length; // update current player
-            UpdatePlayerVisibility();
+            currentPlayer = (currentPlayer + 1) % players.Length; // Switch to the next player
+            counters[currentPlayer] = 0; // Reset the counter for the next player
         }
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            counterTexts[i].text = counters[i].ToString("Actions: " + counters[currentPlayer]); // Update the counter text for each player
+        }
+
+        UpdatePlayerVisibility();
     }
 
     void UpdatePlayerVisibility()
