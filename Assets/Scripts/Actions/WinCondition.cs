@@ -17,8 +17,8 @@ public class WinCondition : MonoBehaviour, IDropHandler
     {
         Pawn pawn = eventData.pointerDrag.GetComponent<Pawn>();
 
-        //Check if the pawn's parent is empty
-        if (transform.childCount == 0 && islandTile.transform.childCount == 1)
+       //Check if the pawn's parent is empty
+        if (transform.childCount == 0 && halfTile.transform.childCount == 1)
         {
             if (islandTile.activeSelf)
             {
