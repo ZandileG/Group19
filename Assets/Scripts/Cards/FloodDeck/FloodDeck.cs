@@ -118,8 +118,8 @@ void ShuffleDiscardPileIntoDrawPile()
         floodDrawPile[randomIndex] = temp;
     }
 }
-/*
-void ShuffleDiscardPileIntoDrawPile()
+
+/*void ShuffleDiscardPileIntoDrawPile()
 {
     Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
 
@@ -206,7 +206,7 @@ public void FlipIslandTile(int cardIndex)
 }
 
 
-/*private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
+private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
 {
     Debug.Log("FloodDeck: FlipIslandTileCoroutine");
 
@@ -235,9 +235,9 @@ public void FlipIslandTile(int cardIndex)
     islandTile.transform.rotation = Quaternion.identity;
 }
 
-*/
 
-private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
+
+/*private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform floodedIslandTile)
 {
     Debug.Log("FloodDeck: FlipIslandTileCoroutine");
 
@@ -267,7 +267,7 @@ private IEnumerator FlipIslandTileCoroutine(GameObject islandTile, Transform flo
         islandTile.transform.rotation = Quaternion.identity;
     }
 }
-
+*/
 
 public void PlaceCardInDiscardPile(GameObject card, int cardIndex)
 {
