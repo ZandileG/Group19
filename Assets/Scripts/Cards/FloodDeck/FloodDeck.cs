@@ -92,7 +92,7 @@ public class FloodDeck : MonoBehaviour
         PlaceCardInDiscardPile(card, cardIndex);
     }
 
-    void ShuffleDiscardPileIntoDrawPile()
+    public void ShuffleDiscardPileIntoDrawPile()
     {
         Debug.Log("FloodDeck: ShuffleDiscardPileIntoDrawPile");
 
