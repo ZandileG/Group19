@@ -5,18 +5,23 @@ using System.Collections;
 
 public class TreasureDeckManager : MonoBehaviour
 {
+    [Header("Treasure Deck")]
     public GameObject[] treasureCards;
     public GameObject[] treasureDiscardPile;
     public GameObject[] treasureHand;
+    public GameObject[] initialCardArray;
 
-    public GameObject[] floodDiscardPile;
-    public WaterMeterSlider waterMeterSlider;
-
+    [Header("Flood Deck")]
     public FloodDeck floodDeck;
-    public GameObject[] initialCardArray; // Array of cards at the start of the game
+    public GameObject[] floodDiscardPile;
+    
+
+    [Header("Player Decks")]
     public PlayerDeck PlayerDeck1;
     public PlayerDeck2 PlayerDeck2;
+    public Transform[] CardPrefabs;
 
+    public WaterMeterSlider waterMeterSlider;
     public GameObject FullText;
 
     public void Start()
@@ -91,15 +96,22 @@ public class TreasureDeckManager : MonoBehaviour
 
         // Remove the top 2 cards from the treasure deck
         RemoveTopCards(2);
-
-        // Instantiate the sprites of the drawn cards to a specific position
-        Vector3 position = new Vector3(0f, 0f, 0f); // Replace with your desired position
-        foreach (GameObject card in drawnCards)
+        // Instantiate the sprites of the drawn cards based on the card prefabs' transforms
+        for (int i = 0; i < drawnCards.Length; i++)
         {
-            Instantiate(card.GetComponent<SpriteRenderer>().sprite, position, Quaternion.identity);
+            Transform cardPrefabTransform = CardPrefabs[i % CardPrefabs.Length]; // Loop through the card prefabs in a circular manner
+            Vector3 position = cardPrefabTransform.position; // Use the transform position of the card prefab
+
+            // Instantiate the card from the player's deck list at the specified position
+            GameObject instantiatedCard = Instantiate(playerDeck.decklist[i], position, Quaternion.identity);
+
+            // Optionally, you can set the instantiated card as a child of another GameObject
+            // instantiatedCard.transform.SetParent(someParentTransform);
+
+            // Add the instantiated card to the player's decklist
+            playerDeck.decklist[i] = instantiatedCard;
         }
     }
-
     public IEnumerator ShowFullTextForDuration(float duration)
     {
         FullText.SetActive(true);
