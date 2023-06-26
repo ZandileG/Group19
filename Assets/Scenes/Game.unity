@@ -11746,7 +11746,7 @@ GameObject:
   - component: {fileID: 918229867}
   - component: {fileID: 918229866}
   m_Layer: 5
-  m_Name: ActionsCanvas
+  m_Name: SpecialActionsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16603,7 +16603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -507, y: 504}
+  m_AnchoredPosition: {x: -498.6, y: 498.6}
   m_SizeDelta: {x: 59.381, y: 49.591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297004380
@@ -23805,7 +23805,7 @@ GameObject:
   - component: {fileID: 1930247483}
   - component: {fileID: 1930247482}
   m_Layer: 5
-  m_Name: ActionsPanel
+  m_Name: SpecialActionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
