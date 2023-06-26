@@ -18,8 +18,6 @@ public class TreasureDeckManager : MonoBehaviour
 
     public GameObject FullText;
 
-
-
     public void Start()
     {
         ShuffleDeck();
@@ -35,10 +33,9 @@ public class TreasureDeckManager : MonoBehaviour
     {
         DrawTopCards(playerDeck.decklist.ToArray(), playerDeck);
     }
+
     public void ShuffleDeck()
     {
-        // Shuffle the treasure cards using any shuffling algorithm
-        // Example:
         for (int i = 0; i < treasureCards.Length; i++)
         {
             int randomIndex = Random.Range(i, treasureCards.Length);
@@ -46,6 +43,29 @@ public class TreasureDeckManager : MonoBehaviour
             treasureCards[randomIndex] = treasureCards[i];
             treasureCards[i] = temp;
         }
+
+        //Checking if first card drawn is a water rise card
+        if (treasureCards[0].tag == "WaterrRiseCard")
+        {
+            // Add the "Water Rise" card back to the treasure deck
+            treasureCards = treasureCards.Concat(new GameObject[] { treasureCards[0] }).ToArray();
+
+            // Get a different card from the treasure deck
+            GameObject newCard = GetDifferentCard();
+
+            // Replace the "Water Rise" card with the different card
+            treasureCards[0] = newCard;
+
+            // Shuffle the treasure deck again
+            ShuffleDeck();
+        }
+    }
+
+    private GameObject GetDifferentCard()
+    {
+        // Get a random card from the treasure deck
+        int randomIndex = Random.Range(1, treasureCards.Length);
+        return treasureCards[randomIndex];
     }
 
     public void DrawTopCards(GameObject[] cardArray, PlayerDeck playerDeck)
@@ -67,6 +87,9 @@ public class TreasureDeckManager : MonoBehaviour
             AddCardToDeck(playerDeck, drawnCards[i]);
         }
 
+        // Remove the top 2 cards from the treasure deck
+        RemoveTopCards(2);
+
         // Instantiate the sprites of the drawn cards to a specific position
         Vector3 position = new Vector3(0f, 0f, 0f); // Replace with your desired position
         foreach (GameObject card in drawnCards)
@@ -74,6 +97,7 @@ public class TreasureDeckManager : MonoBehaviour
             Instantiate(card.GetComponent<SpriteRenderer>().sprite, position, Quaternion.identity);
         }
     }
+
     public IEnumerator ShowFullTextForDuration(float duration)
     {
         FullText.SetActive(true);
@@ -92,5 +116,15 @@ public class TreasureDeckManager : MonoBehaviour
         playerDeck.decklist.Add(card);
     }
 
+    private void RemoveTopCards(int count)
+    {
+        if (playerDeck.decklist.Count == 5)
+        {
+            StartCoroutine(ShowFullTextForDuration(2.5f));
+            return;
+        }
+
+        treasureCards = treasureCards.Skip(count).ToArray();
+    }
 
 }
