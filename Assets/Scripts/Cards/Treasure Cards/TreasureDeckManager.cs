@@ -94,22 +94,19 @@ public class TreasureDeckManager : MonoBehaviour
             AddCardToDeck(playerDeck, drawnCards[i]);
         }
 
-        // Remove the top 2 cards from the treasure deck
+        
         RemoveTopCards(2);
-        // Instantiate the sprites of the drawn cards based on the card prefabs' transforms
+       
         for (int i = 0; i < drawnCards.Length; i++)
         {
-            Transform cardPrefabTransform = CardPrefabs[i % CardPrefabs.Length]; // Loop through the card prefabs in a circular manner
-            Vector3 position = cardPrefabTransform.position; // Use the transform position of the card prefab
+            Transform cardPrefabTransform = CardPrefabs[i % CardPrefabs.Length]; 
+            Vector3 position = cardPrefabTransform.position;
 
-            // Instantiate the card from the player's deck list at the specified position
+            
             GameObject instantiatedCard = Instantiate(playerDeck.decklist[i], position, Quaternion.identity);
-            instantiatedCard.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+            instantiatedCard.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
-            // Optionally, you can set the instantiated card as a child of another GameObject
-            // instantiatedCard.transform.SetParent(someParentTransform);
-
-            // Add the instantiated card to the player's decklist
+           
             playerDeck.decklist[i] = instantiatedCard;
         }
     }
