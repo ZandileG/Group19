@@ -14,8 +14,8 @@ public class WinCondition : MonoBehaviour, IDropHandler
     {
         Pawn pawn = eventData.pointerDrag.GetComponent<Pawn>();
 
-    //Check if the pawn's parent is empty
-        if (transform.childCount == 3)
+    //Check if the pawn's parent is not empty
+        if (transform.childCount == 2)
         {
           //The new parent after the drag
             pawn.parentAfterDrag = transform;

@@ -15,18 +15,6 @@ public class PawnMovement : MonoBehaviour, IDropHandler
           //The new parent after the drag
             pawn.parentAfterDrag = transform;
         }
-
-        else 
-        {
-          //Remove the pawn from the tile
-            StartCoroutine(RemovePawnFromTile(eventData.pointerDrag, 1f));
-        }
-    }
-
-    private IEnumerator RemovePawnFromTile(GameObject pawn, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(pawn);
     }
 }
 
