@@ -20524,22 +20524,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4397960665677944438, guid: 5e00edb586c68b743b98ced03115374d, type: 3}
   m_PrefabInstance: {fileID: 1716866083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1716866089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370594365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5580956f33479840a208988a48d6d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameCanvas: {fileID: 660387589}
-  winOrLoseCanvas: {fileID: 391158138}
-  winText: {fileID: 254970001}
-  islandTile: {fileID: 0}
 --- !u!1 &1718048374
 GameObject:
   m_ObjectHideFlags: 0
@@ -23384,7 +23368,8 @@ MonoBehaviour:
   gameCanvas: {fileID: 660387589}
   winOrLoseCanvas: {fileID: 391158138}
   winText: {fileID: 254970001}
-  islandTile: {fileID: 0}
+  islandTile: {fileID: 1688340908}
+  halfTile: {fileID: 370594365}
 --- !u!1 &1877520752
 GameObject:
   m_ObjectHideFlags: 0
