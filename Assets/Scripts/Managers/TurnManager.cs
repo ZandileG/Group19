@@ -8,7 +8,6 @@ public class TurnManager : MonoBehaviour
 {
     public GameObject[] players; // array of player prefabs
     public GameObject[] PlayerPanels; // array of player prefabs
-    public float turnDuration = 5f; // duration of each turn in seconds
     private int currentPlayer = 0; // variable to keep track of current player's turn
     private int[] counters; // counters for the text
     public Text[] counterTexts; // references to the counter text elements
@@ -41,6 +40,20 @@ public class TurnManager : MonoBehaviour
         }
 
         UpdatePlayerVisibility();
+    }
+
+    public void IncreaseCounter()
+    {
+        counters[currentPlayer]++; // Increase the counter for the current player
+
+        if (counters[currentPlayer] >= 3)
+        {
+            NextTurn(); // Switch to the next turn if the counter exceeds the limit
+        }
+        else
+        {
+            counterTexts[currentPlayer].text = "Actions: " + counters[currentPlayer].ToString(); // Update the counter text for the current player
+        }
     }
 
     void UpdatePlayerVisibility()
