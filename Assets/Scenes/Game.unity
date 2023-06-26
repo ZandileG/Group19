@@ -13447,7 +13447,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: afc22456c2614904cace4728fbe9c5ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20521,7 +20521,7 @@ MonoBehaviour:
   gameCanvas: {fileID: 660387589}
   winOrLoseCanvas: {fileID: 391158138}
   winText: {fileID: 254970001}
-  floodedTile: {fileID: 1688340908}
+  islandTile: {fileID: 0}
 --- !u!1 &1718048374
 GameObject:
   m_ObjectHideFlags: 0
@@ -23366,7 +23366,7 @@ MonoBehaviour:
   gameCanvas: {fileID: 660387589}
   winOrLoseCanvas: {fileID: 391158138}
   winText: {fileID: 254970001}
-  floodedTile: {fileID: 1688340908}
+  islandTile: {fileID: 0}
 --- !u!1 &1877520752
 GameObject:
   m_ObjectHideFlags: 0
