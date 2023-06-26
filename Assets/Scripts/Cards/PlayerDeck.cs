@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerDeck : MonoBehaviour
 {
-    public GameObject[] DeckList;
+    public List<GameObject> decklist = new List<GameObject>();
 }

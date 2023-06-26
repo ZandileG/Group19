@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Linq;
+using UnityEngine.UI;
+using System.Collections;
 
 public class TreasureDeckManager : MonoBehaviour
 {
@@ -8,10 +11,30 @@ public class TreasureDeckManager : MonoBehaviour
 
     public GameObject[] floodDiscardPile;
     public WaterMeterSlider waterMeterSlider;
+
     public FloodDeck floodDeck;
+    public GameObject[] initialCardArray; // Array of cards at the start of the game
+    public PlayerDeck playerDeck;
 
-    public int cardsToDrawAtEnd;
+    public GameObject FullText;
 
+
+
+    public void Start()
+    {
+        ShuffleDeck();
+        DrawInitialCards();
+    }
+
+    public void DrawInitialCards()
+    {
+        DrawTopCards(treasureCards, playerDeck);
+    }
+
+    public void DrawCardsOnClick()
+    {
+        DrawTopCards(playerDeck.decklist.ToArray(), playerDeck);
+    }
     public void ShuffleDeck()
     {
         // Shuffle the treasure cards using any shuffling algorithm
@@ -25,96 +48,49 @@ public class TreasureDeckManager : MonoBehaviour
         }
     }
 
-    public void DrawTreasureCards(int numCards)
+    public void DrawTopCards(GameObject[] cardArray, PlayerDeck playerDeck)
     {
-        for (int i = 0; i < numCards; i++)
+        // Check if there are at least 2 cards in the cardArray
+        if (cardArray.Length < 2)
         {
-            GameObject drawnCard = treasureCards[0];
-            treasureCards[0] = null;
-            ShiftArrayElementsLeft(treasureCards);
+            Debug.Log("Insufficient cards in the array.");
+            return;
+        }
 
-            if (drawnCard.CompareTag("WaterRiseCard"))
-            {
-                HandleWatersRiseCard(drawnCard);
-            }
-            else
-            {
-                AddCardToHand(drawnCard);
-            }
+        // Create a separate array to store the drawn cards
+        GameObject[] drawnCards = new GameObject[2];
+
+        // Draw the top 2 cards from the cardArray and add them to the decklist
+        for (int i = 0; i < 2; i++)
+        {
+            drawnCards[i] = cardArray[i];
+            AddCardToDeck(playerDeck, drawnCards[i]);
+        }
+
+        // Instantiate the sprites of the drawn cards to a specific position
+        Vector3 position = new Vector3(0f, 0f, 0f); // Replace with your desired position
+        foreach (GameObject card in drawnCards)
+        {
+            Instantiate(card.GetComponent<SpriteRenderer>().sprite, position, Quaternion.identity);
         }
     }
-
-    private void ShiftArrayElementsLeft(GameObject[] array)
+    public IEnumerator ShowFullTextForDuration(float duration)
     {
-        for (int i = 1; i < array.Length; i++)
-        {
-            array[i - 1] = array[i];
-        }
-
-        array[array.Length - 1] = null;
+        FullText.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        FullText.SetActive(false);
     }
 
-    private void HandleWatersRiseCard(GameObject watersRiseCard)
+    private void AddCardToDeck(PlayerDeck playerDeck, GameObject card)
     {
-        waterMeterSlider.MoveWaterLevelMarker();
-
-        if (floodDiscardPile.Length > 0)
+        if (playerDeck.decklist.Count >= 5)
         {
-            ShuffleFloodDiscardPile();
-        }
-        else
-        {
-            waterMeterSlider.MoveWaterLevelMarker();
+            StartCoroutine(ShowFullTextForDuration(2.5f));
+            return;
         }
 
-        AddCardToDiscardPile(watersRiseCard);
+        playerDeck.decklist.Add(card);
     }
 
-    private void ShuffleFloodDiscardPile()
-    {
-        // Shuffle the flood discard pile using any shuffling algorithm
-        // Example:
-        for (int i = 0; i < floodDiscardPile.Length; i++)
-        {
-            int randomIndex = Random.Range(i, floodDiscardPile.Length);
-            GameObject temp = floodDiscardPile[randomIndex];
-            floodDiscardPile[randomIndex] = floodDiscardPile[i];
-            floodDiscardPile[i] = temp;
-        }
 
-        // Move the shuffled cards to the flood draw pile
-        foreach (GameObject card in floodDiscardPile)
-        {
-            // Add card to the flood draw pile
-            // Example:
-            // floodDeck.AddCardToDrawPile(card);
-        }
-
-        // Clear the flood discard pile
-        floodDiscardPile = new GameObject[0];
-    }
-
-    private void AddCardToHand(GameObject card)
-    {
-        for (int i = 0; i < treasureHand.Length; i++)
-        {
-            if (treasureHand[i] == null)
-            {
-                treasureHand[i] = card;
-                break;
-            }
-        }
-    }
-
-    private void AddCardToDiscardPile(GameObject card)
-    {
-        for (int i = 0; i < treasureDiscardPile.Length; i++)
-        {
-            if (treasureDiscardPile[i] == null)
-            {
-                treasureDiscardPile[i] = card;
-                break;
-            }
-        }
-    }
 }

@@ -6,21 +6,13 @@ public class TreasureDeckInput : MonoBehaviour
 {
     public TreasureDeckManager TreasureDeck; // Reference to the FloodDeck script
     public Transform treasureContainer; // Transform of the container GameObject
-    
+
 
     private void OnMouseDown()
     {
         TreasureDeck.ShuffleDeck();
-        TreasureDeck.DrawTreasureCards(2);
+
+        TreasureDeck.DrawCardsOnClick();
     }
 
-
-
-
-
-    /*    private void Start()
-    {
-        ShuffleDeck();
-        DrawTreasureCards(2);
-    }*/
 }
